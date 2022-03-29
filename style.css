@@ -7,26 +7,33 @@
 .header{
     min-height: 100vh;
     width: 100%;
-    background-image: linear-gradient(rgba(42, 42, 42, 0.7),rgba(42, 42, 42, 0.7)), url(./img/bg1.jpg);
-    background-position: center;
-    background-size: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(http://www.deke.com/files/images/Ball-travels-around-impossible-triangle.gif);
+    background-position:center;
+    background-color: #000;
+    background-size:contain;
     position: relative;
+    background-repeat: no-repeat;
 }
 
 nav{
     display: flex;
-    align-items: center;
+    align-items:center;
     justify-content: space-between;
+    background-color: #000;
     padding: 1% 4%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
 }
 nav a{
     color: #fff;
     font-size: x-large;
-    text-decoration: none;
+    text-decoration: none;    
 }
 .nav-links{
     flex: 1;
     text-align: right;
+    padding: 0 100px;
 }
 .nav-links ul li{
     display: inline-block;
@@ -69,9 +76,10 @@ nav .fa-solid{
     margin: 10px;
 }
 .about {
+    background-color: #000;
     min-height: 70vh;
     width: 100%;
-    background: rgb(54, 54, 54);
+    background: url(./img/bg1.jpg);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -85,7 +93,7 @@ nav .fa-solid{
 .about p{
     font-size: 16px;
     color: #fff;
-    padding: 25px;
+    padding: 25px 80px;
 }
 .about .button {
     border-radius: 30px;
@@ -120,17 +128,38 @@ nav .fa-solid{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 40px 0;
+    padding: 40px 150px;
 }
 .wrapper{
     max-height: 400px;
     display: flex;
-    overflow-x: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
 }
 .wrapper::-webkit-scrollbar{
-    width: 0;
+    border: none;
+    
 }
-.wrapper .member {
+.wrapper::-webkit-scrollbar-track{
+    background-color: rgb(17, 0, 255);
+    height: 16px;
+    width: 16px;
+    border-radius: 10px;
+}
+
+.wrapper::-webkit-scrollbar-thumb{
+    background-color: rgb(8, 10, 104);
+    border-radius: 10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+}
+.wrapper::-webkit-scrollbar-track-piece{
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+.wrapper .member{
     flex: 1 1 250px;
     margin: 20px;
     text-align: center;
@@ -170,6 +199,12 @@ nav .fa-solid{
     font-size: 32px;
     padding: 25px;
     color: #fff;
+}
+.activities-row{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px 0;
 }
 .activity {
     flex: 1 1 250px;
@@ -216,7 +251,7 @@ nav .fa-solid{
 .history p{
     font-size: 16px;
     color: #fff;
-    padding: 25px;
+    padding: 25px 80px;
 }
 .history img{
     width: 40%;
@@ -229,6 +264,7 @@ q{
     color: #fff;
 }
 figcaption{
+    padding: 10px;
     text-align: right;
     color: aquamarine;
 }
@@ -249,7 +285,7 @@ figcaption{
 .registration p{
     font-size: 16px;
     color: #fff;
-    padding: 25px;
+    padding: 25px 80px;
 }
 .registration .button {
     border-radius: 30px;
@@ -306,40 +342,129 @@ footer {
     height: 80px;
     padding: 20px;
 }
-@keyframes scroll {
-    0% {
-        transform: translateX(0%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
+
 /*for smartphones users*/
 @media (max-width: 650px) {
-    .text-box h1{
-        font-size: 32px;
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: 'Changa', sans-serif;
     }
-    .nav-links ul li{
-        display: block;
+    
+    .header{
+        min-height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)), url(http://www.deke.com/files/images/Ball-travels-around-impossible-triangle.gif);
+        background-position:center;
+        background-color: #000;
+        background-size:contain;
+        position: relative;
+        background-repeat: no-repeat;
     }
-    .nav-links ul{
-        padding: 15px;
+    
+    nav{
+        display: flex;
+        align-items:center;
+        justify-content: space-between;
+        background-color: #000;
+        padding: 1% 4%;
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+    }
+    nav a{
+        color: #fff;
+        font-size: x-large;
+        text-decoration: none;    
     }
     .nav-links{
+        flex: 1;
+        text-align: right;
+        padding: 0 50px;
+    }
+    .nav-links ul li{
+        display: inline-block;
+        margin: 5px 10px;
+    }
+    .nav-links ul li a{
+        font-size: 11px;
+        text-decoration: none;
+    }
+    .nav-links ul li a::after{
+        content: "";
+        display: block;
+        margin: auto;
+        height: 2px;
+        width: 0%;
+        background: rgb(197, 131, 235);
+        transition: .3s;
+    }
+    .nav-links ul li a:hover:after{
+        width: 100%;
+    }
+    
+    .text-box{
+        width: 90%;
+        color: white;
         position: absolute;
-        height: 100vh;
-        width: 200px;
-        background: #000;
-        top: 0;
-        right: -200px;
-        text-align: left;
-        z-index: 2;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    .text-box h1{
+        font-size: 36px;
+    }
+    .text-box p{
+        font-size: 18px;
     }
     nav .fa-solid{
-        display: block;
-        color: white;
+        display: none;
+        margin: 10px;
+    }
+    .about {
+        background-color: #000;
+        min-height: 70vh;
+        width: 100%;
+        background: url(./img/bg1.jpg);
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        text-align: center;
+    }
+    .about h1{
+        font-size: 32px;
+        padding: 25px;
+        color: #fff;
+    }
+    .about p{
+        font-size: 16px;
+        color: #fff;
+        padding: 25px 80px;
+    }
+    .about .button {
+        border-radius: 30px;
+        background-color: rgb(231, 102, 98);
+        font-size: 24px;
+        color: #000;
+        text-align: center;
+        padding: 10px;
+        margin: 20px;
+        position: relative;
         cursor: pointer;
-        font-size: 20px;
+    }
+    .about a{
+        text-decoration: none;
+    }
+    .team {
+        min-height: 50vh;
+        width: 100%;
+        background: rgb(67, 60, 158);
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        text-align: center;
+        
     }
     .team h1{
         font-size: 32px;
@@ -350,15 +475,48 @@ footer {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        padding: 40px 0;
+        padding: 10px 10px;
     }
-    .member {
+    .wrapper{
+        max-height: 400px;
+        display: flex;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+    .wrapper::-webkit-scrollbar{
+        border: none;
+    }
+    .wrapper::-webkit-scrollbar-track{
+        background-color: rgb(17, 0, 255);
+        height: 16px;
+        width: 16px;
+        border-radius: 10px;
+    }
+    
+    .wrapper::-webkit-scrollbar-thumb{
+        background-color: rgb(8, 10, 104);
+        border-radius: 10px;
+        width: 10px;
+        height: 10px;
+        border-radius: 10px;
+    }
+    .wrapper::-webkit-scrollbar-track-piece{
+        background-color: #ffffff;
+        border-radius: 10px;
+    }
+    .wrapper .member{
         flex: 1 1 250px;
-        margin: 40px;
+        margin: 20px;
         text-align: center;
-        padding: 20px 30px;
+        padding: 20px 10px;
         cursor: pointer;
-        min-width: 200px;
+        min-width: 190px;
+    }
+    .member:hover{
+        background: rgb(143, 135, 190);
+        transition-duration: 0.3s;
+        border-radius: 1em;
     }
     .member img{
         display: block;
@@ -374,21 +532,165 @@ footer {
         color: #ffffff;
         margin: 15px 0;
     }
-    @keyframes scroll {
-        0% {
-            transform: translateX(0%);
-        }
-        100% {
-            transform: translateX(-100%);
-        }
+    .member p{
+        font-size: 12px;
+        white-space: pre-line; 
+    }
+    .activities{
+        min-height: 50vh;
+        width: 100%;
+        background: rgb(92, 75, 170);
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        text-align: center;
+    }
+    .activities h1{
+        font-size: 32px;
+        padding: 25px;
+        color: #fff;
+    }
+    .activities-row{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 40px 0;
+    }
+    .activity {
+        flex: 1 1 250px;
+        margin: 20px;
+        text-align: center;
+        padding: 20px 10px;
+        cursor: pointer;
+        width: 350px;
+    }
+    .activity:hover{
+        background: rgb(175, 166, 231);
+        transition-duration: 0.3s;
+        border-radius: 1em;
+    }
+    .activity h2{
+        text-transform: uppercase;
+        font-size: 24px;
+        color: rgb(255, 255, 255);
+        margin: 15px 0;
+    }
+    .activity p{
+        color: #000;
+    }
+    .activities .fa-solid{
+        display: block;
+        color: white;
+        cursor: pointer;
+        font-size: 40px;
+    }
+    .history {
+        min-height: 50vh;
+        width: 100%;
+        background: rgb(54, 54, 54);
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        text-align: center;
+    }
+    .history h1{
+        font-size: 32px;
+        padding: 25px;
+        color: #fff;
+    }
+    .history p{
+        font-size: 16px;
+        color: #fff;
+        padding: 25px 80px;
+    }
+    .history img{
+        width: 80%;
+        padding: 10px;
+        border-radius: 2em;
+    }
+    q{
+        font-size: 16px;
+        padding: 25px;
+        color: #fff;
+    }
+    figcaption{
+        font-size: 10px;
+        padding: 10px;
+        text-align: right;
+        color: aquamarine;
     }
     .registration {
-        min-height: 80vh;
+        min-height: 60vh;
         width: 100%;
         background: rgb(142, 78, 226);
         background-position: center;
         background-size: cover;
         position: relative;
         text-align: center;
+    }
+    .registration h1{
+        font-size: 32px;
+        padding: 25px;
+        color: #fff;
+    }
+    .registration p{
+        font-size: 16px;
+        color: #fff;
+        padding: 25px 80px;
+    }
+    .registration .button {
+        border-radius: 30px;
+        background-color: rgb(231, 102, 98);
+        font-size: 24px;
+        color: #000;
+        text-align: center;
+        width: fit-content;
+        padding: 10px;
+        position: relative;
+        cursor: pointer;
+    }
+    .registration a{
+        text-decoration: none;
+    }
+    .contact {
+        min-height: 50vh;
+        width: 100%;
+        background: rgb(92, 75, 170);
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        text-align: center;
+    }
+    .contact h1{
+        font-size: 32px;
+        padding: 25px;
+        color: #fff;
+    }
+    .contact h2{
+        font-size: 16px;
+        color: #fff;
+        text-align: center;
+    }
+    .contact .fa-brands{
+        font-size: 50px;
+        color: #fff;
+    }
+    .contact .fa-solid{
+        font-size: 50px;
+        color: #fff;
+    }
+    .contact .activity{
+        max-width: 100px;
+    }
+    .contact a{
+        text-decoration: none;
+    }
+    footer {
+        text-align: center;
+        color: #fff;
+        background-color: #000;
+        font-size: 12px;
+        height: 80px;
+        padding: 20px;
     }
 }
