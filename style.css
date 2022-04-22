@@ -189,7 +189,7 @@ nav .fa-solid{
 .activities{
     min-height: 50vh;
     width: 100%;
-    background: rgb(92, 75, 170);
+    background: #00A13D;
     background-position: center;
     background-size: cover;
     position: relative;
@@ -215,7 +215,7 @@ nav .fa-solid{
     width: 350px;
 }
 .activity:hover{
-    background: rgb(175, 166, 231);
+    background: #5AF996;
     transition-duration: 0.3s;
     border-radius: 1em;
 }
@@ -237,7 +237,7 @@ nav .fa-solid{
 .history {
     min-height: 50vh;
     width: 100%;
-    background: rgb(54, 54, 54);
+    background: #FFAF19;
     background-position: center;
     background-size: cover;
     position: relative;
@@ -266,12 +266,12 @@ q{
 figcaption{
     padding: 10px;
     text-align: right;
-    color: aquamarine;
+    color: #009FD2;
 }
 .registration {
     min-height: 60vh;
     width: 100%;
-    background: rgb(142, 78, 226);
+    background: #009360;
     background-position: center;
     background-size: cover;
     position: relative;
@@ -289,7 +289,7 @@ figcaption{
 }
 .registration .button {
     border-radius: 30px;
-    background-color: rgb(231, 102, 98);
+    background-color: #FFD700;
     font-size: 24px;
     color: #000;
     text-align: center;
